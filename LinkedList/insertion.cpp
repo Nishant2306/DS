@@ -14,13 +14,19 @@ void printList(Node* n)
 		n = n->next;
 	}
 }
- 
+void InsertAtFront(Node* n){
+    
+}
 int main(){
     Node* head = new Node();
     Node* ptr = head;
-    for(int i =0; i< 5; i++){
+    int n=5;
+    for(int i =0; i< n; i++){
         cin >> ptr-> data;
         ptr -> next = new Node();
         ptr = ptr-> next;
     }
+    cout << "Enter the integer you want to insert:- \n";
+    int a;
+    cin >> a;
 }
