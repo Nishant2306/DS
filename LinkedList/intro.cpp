@@ -15,14 +15,14 @@ using namespace std;
 class Node {
 public:
 	int data;
-	Node* next;
+	Node* next = NULL;
 };
 
 // This function prints contents of linked list
 // starting from the given node
 void printList(Node* n)
 {
-	while (n != NULL) {
+	while (n->next != NULL) {
 		cout << n->data << " ";
 		n = n->next;
 	}
@@ -31,23 +31,13 @@ void printList(Node* n)
 // Driver code
 int main()
 {
-	Node* head = NULL;
-	Node* second = NULL;
-	Node* third = NULL;
-
-	// allocate 3 nodes in the heap
-	head = new Node();
-	second = new Node();
-	third = new Node();
-
-	head->data = 1; // assign data in first node
-	head->next = second; // Link first node with second
-
-	second->data = 2; // assign data to second node
-	second->next = third;
-
-	third->data = 3; // assign data to third node
-	third->next = NULL;
+	Node* head = new Node();
+    Node* ptr = head;
+    for(int i = 0; i<5; i++){
+        cin >> ptr->data;
+        ptr->next = new Node();
+        ptr = ptr -> next;
+    }
 
 	printList(head);
 
