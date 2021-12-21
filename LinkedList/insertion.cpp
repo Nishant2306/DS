@@ -24,11 +24,12 @@ int main(){
     Node* head = new Node();
     Node* ptr = head;
     int n=5;
-    for(int i =0; i< n; i++){
+    for(int i =0; i< n-1; i++){
         cin >> ptr-> data;
         ptr -> next = new Node();
         ptr = ptr-> next;
     }
+    cin >> ptr-> data;
     cout << "Enter the integer you want to insert:- \n";
     int a;
     cin >> a;
