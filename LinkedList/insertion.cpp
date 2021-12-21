@@ -9,7 +9,7 @@ public:
 
 void printList(Node* n)
 {
-	while (n != NULL) {
+	while (n->next != NULL) {
 		cout << n->data << " ";
 		n = n->next;
 	}
