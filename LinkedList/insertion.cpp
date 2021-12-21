@@ -14,12 +14,11 @@ void printList(Node* n)
 		n = n->next;
 	}
 }
-void InsertAtFront(Node* head, int new_data){
+Node* InsertAtFront(Node* head, int new_data){
     Node* new_node = new Node;
     new_node -> data = new_data;
     new_node -> next = head;
-    head = new_node;
-
+    return new_node;
 }
 int main(){
     Node* head = new Node();
@@ -33,6 +32,6 @@ int main(){
     cout << "Enter the integer you want to insert:- \n";
     int a;
     cin >> a;
-    InsertAtFront(head, a);
+    head = InsertAtFront(head, a);
     printList(head);
 }
