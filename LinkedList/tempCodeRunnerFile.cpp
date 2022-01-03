@@ -1,4 +1,4 @@
-ant to insert in starting:- \n";
-    // int a;
-    // cin >> a;
-    // head = InsertAtFront(head, a);
+(temp == 1){
+    del = head;
+    head = head -> next;
+    delete del;
