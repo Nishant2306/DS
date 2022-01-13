@@ -15,7 +15,7 @@ void printList(Node *head)
         head = head->next;
     }
     cout << endl;
-}
+}  
 Node *swapnodes(Node *head, int X, int Y)
 {
     if (X == Y)
