@@ -21,3 +21,16 @@ int main()
     cout << "\nThe first element is " << *pos;
     return 0;
 }
+
+/*
+1.reference operator [g] – Returns a reference to the element at position ‘g’ in the vector
+
+2.at(g) – Returns a reference to the element at position ‘g’ in the vector
+
+3.front() – Returns a reference to the first element in the vector
+
+4.back() – Returns a reference to the last element in the vector
+
+5.data() – Returns a direct pointer to the memory array used internally by the vector to store its owned elements.
+
+*/
