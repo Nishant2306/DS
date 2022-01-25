@@ -32,16 +32,48 @@ Node *reverseITR(Node *head)
     return head;
 }
 
-Node *reverseREC(Node *head)
+Node *reverseREC1(Node *head)
 {
     if (head == NULL or head->next == NULL)
     {
         return head;
     }
-    Node *rest = reverseREC(head->next);
+    Node *rest = reverseREC1(head->next);
     head->next->next = head;
     head -> next = NULL;
     return rest;
+}
+void reverseREC2(Node* curr, Node* prev, Node** head);
+  
+// This function mainly calls reverseUtil()
+// with prev as NULL
+void reverserec2(Node** head)
+{
+    if (!head)
+        return;
+    reverseREC2(*head, NULL, head);
+}
+  
+// A simple and tail-recursive function to reverse
+// a linked list.  prev is passed as NULL initially.
+void reverseREC2(Node* curr, Node* prev, Node** head)
+{
+    /* If last node mark it head*/
+    if (!curr->next) {
+        *head = curr;
+  
+        /* Update next to prev node */
+        curr->next = prev;
+        return;
+    }
+  
+    /* Save curr->next node for recursive call */
+    Node* next = curr->next;
+  
+    /* and update next ..*/
+    curr->next = prev;
+  
+    reverseREC2(next, curr, head);
 }
 int main()
 {
@@ -56,7 +88,8 @@ int main()
     }
     cin >> ptr->data;
     // head = reverseITR(head);
-    head = reverseREC(head);
+    // head = reverseREC1(head);
+    reverserec2(&head);
     printList(head);
     return 0;
 }
