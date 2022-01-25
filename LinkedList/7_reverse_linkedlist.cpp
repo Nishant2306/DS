@@ -31,6 +31,18 @@ Node *reverseITR(Node *head)
     head = prev;
     return head;
 }
+
+Node *reverseREC(Node *head)
+{
+    if (head == NULL or head->next == NULL)
+    {
+        return head;
+    }
+    Node *rest = reverseREC(head->next);
+    head->next->next = head;
+    head -> next = NULL;
+    return rest;
+}
 int main()
 {
     Node *head = new Node();
@@ -43,7 +55,8 @@ int main()
         ptr = ptr->next;
     }
     cin >> ptr->data;
-    head = reverseITR(head);
+    // head = reverseITR(head);
+    head = reverseREC(head);
     printList(head);
     return 0;
 }
