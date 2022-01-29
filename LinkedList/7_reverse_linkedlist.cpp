@@ -75,6 +75,49 @@ void reverseREC2(Node* curr, Node* prev, Node** head)
   
     reverseREC2(next, curr, head);
 }
+
+Node* reverseStack(Node* head){
+    stack<Node*> s;
+    Node* curr = head;
+    while(curr->next != NULL){
+        s.push(curr);
+        curr = curr->next;
+    }
+    head = curr;
+    while(!s.empty()){
+        curr -> next = s.top();
+        s.pop();
+        curr = curr-> next;
+    }
+    curr->next = NULL;
+    return head;
+}
+
+int count(Node* head){
+    Node* curr = head;
+    int a = 1;
+    while(curr!=NULL){
+        curr= curr->next;
+        a++;
+    }
+    return a;
+}
+Node* reverseArray(Node* head){
+    Node* curr = head;
+    int i =  count(head);
+    int j = 1;
+    int arr[i];
+    while(i and curr!=NULL){
+        arr[j++] = curr -> data;
+        curr = curr -> next;
+        i--;
+    }
+    j--;
+    while(j){
+        cout << arr[j--] << " ";
+    }
+    return head;
+}
 int main()
 {
     Node *head = new Node();
@@ -89,7 +132,9 @@ int main()
     cin >> ptr->data;
     // head = reverseITR(head);
     // head = reverseREC1(head);
-    reverserec2(&head);
-    printList(head);
+    // reverserec2(&head);
+    // head = reverseStack(head);
+    head = reverseArray(head);
+    // printList(head);
     return 0;
 }
