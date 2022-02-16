@@ -23,9 +23,10 @@ int main()
 	map<int, int>::iterator itr;
 	cout << "\nThe map gquiz1 is : \n";
 	cout << "\tKEY\tELEMENT\n";
-	for (itr = gquiz1.begin(); itr != gquiz1.end(); ++itr) {
+	for (itr = gquiz1.begin(); itr != gquiz1.end(); ++itr)
+	{
 		cout << '\t' << itr->first << '\t' << itr->second
-			<< '\n';
+			 << '\n';
 	}
 	cout << endl;
 
@@ -34,11 +35,12 @@ int main()
 
 	// print all elements of the map gquiz2
 	cout << "\nThe map gquiz2 after"
-		<< " assign from gquiz1 is : \n";
+		 << " assign from gquiz1 is : \n";
 	cout << "\tKEY\tELEMENT\n";
-	for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) {
+	for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr)
+	{
 		cout << '\t' << itr->first << '\t' << itr->second
-			<< '\n';
+			 << '\n';
 	}
 	cout << endl;
 
@@ -48,9 +50,10 @@ int main()
 			" elements less than key=3 : \n";
 	cout << "\tKEY\tELEMENT\n";
 	gquiz2.erase(gquiz2.begin(), gquiz2.find(3));
-	for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) {
+	for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr)
+	{
 		cout << '\t' << itr->first << '\t' << itr->second
-			<< '\n';
+			 << '\n';
 	}
 
 	// remove all elements with key = 4
@@ -59,24 +62,25 @@ int main()
 	cout << "\ngquiz2.erase(4) : ";
 	cout << num << " removed \n";
 	cout << "\tKEY\tELEMENT\n";
-	for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) {
+	for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr)
+	{
 		cout << '\t' << itr->first << '\t' << itr->second
-			<< '\n';
+			 << '\n';
 	}
 
 	cout << endl;
 
 	// lower bound and upper bound for map gquiz1 key = 5
 	cout << "gquiz1.lower_bound(5) : "
-		<< "\tKEY = ";
+		 << "\tKEY = ";
 	cout << gquiz1.lower_bound(5)->first << '\t';
 	cout << "\tELEMENT = " << gquiz1.lower_bound(5)->second
-		<< endl;
+		 << endl;
 	cout << "gquiz1.upper_bound(5) : "
-		<< "\tKEY = ";
+		 << "\tKEY = ";
 	cout << gquiz1.upper_bound(5)->first << '\t';
 	cout << "\tELEMENT = " << gquiz1.upper_bound(5)->second
-		<< endl;
+		 << endl;
 
 	return 0;
 }
